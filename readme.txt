@@ -25,3 +25,4 @@ git diff HEAD 可查看工作区和分支的区别
 6、git checkout -- readme.txt	// 让这个文件回到最近一次git commit或git add时的状态s
 git reset HEAD readme.txt	//git reset命令既可以回退版本，也可以把暂存区的修改回退到工作区
 
+7、git rm -- readme.txt // 删除
