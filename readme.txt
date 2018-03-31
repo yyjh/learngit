@@ -26,3 +26,8 @@ git diff HEAD 可查看工作区和分支的区别
 git reset HEAD readme.txt	//git reset命令既可以回退版本，也可以把暂存区的修改回退到工作区
 
 7、git rm -- readme.txt // 删除
+
+8、1)在github创建一个远程库
+	2)git remote add origin  https://github.com/yyjh/learngit // 关联一个远程库
+	3)git push -u origin master第一次推送master分支的所有内容
+	  git push origin master推送最新修改
