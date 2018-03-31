@@ -36,3 +36,19 @@ git reset HEAD readme.txt	//git reset命令既可以回退版本，也可以把�
 	[credential]   
     helper = store
 	保存，第一次需要输入用户名密码，输入一次密码后第二次就会记住密码了不会再提示输入用户名及密码
+10、从远程库clone
+	GitHub给出的地址不止一个，还可以用https://github.com/yyjh/gitskills.git这样的地址。实际上，Git支持多种协
+	议，默认的git://使用ssh，但也可以使用https等其他协议。
+	git clone git@github.com:yyjh/gitskills.git
+	git clone https://github.com/yyjh/gitskills.git
+	
+	使用ssh时报错： Warning: Permanently added the RSA host key for IP address '13.250.177.223' to the list of known 
+	hosts.
+	git@github.com: Permission denied (publickey).
+	fatal: Could not read from remote repository.
+
+	Please make sure you have the correct access rights
+	and the repository exists.
+	
+	需添加公钥 1) 可以用 ssh -T git@github.com去测试一下
+			   2) 执行 ssh-keygen -t rsa -C "yyjh"获取公钥在known_hosts，添加到github
