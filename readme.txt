@@ -52,3 +52,8 @@ git reset HEAD readme.txt	//git reset命令既可以回退版本，也可以把�
 	
 	需添加公钥 1) 可以用 ssh -T git@github.com去测试一下
 			   2) 执行 ssh-keygen -t rsa -C "yyjh"获取公钥在known_hosts，添加到github
+11、创建分支
+	git checkout -b dev
+	创建dev分支并切换到dev相当于
+	git branch dev
+	git checkout dev
