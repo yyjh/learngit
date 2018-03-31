@@ -59,7 +59,12 @@ git reset HEAD readme.txt	//git reset命令既可以回退版本，也可以把�
 	git checkout dev
 
 12、git branch// 查看分支
-	git branch// 合并分支
+	git merge  branch// 合并分支
 	git branch -d <name>// 删除分支
 
-	sdf
+13、git merge --no-ff -m "merge with no-ff" dev// 禁用Fast forward，本次合并要创建一个新的commit，所以加上-m参数，
+	把commit描述写进去
+	
+14、git stash// 保留工作现场
+	git stash pop// 回复现场
+	git stash list  git stash apply stash@{0}
