@@ -31,3 +31,8 @@ git reset HEAD readme.txt	//git reset命令既可以回退版本，也可以把�
 	2)git remote add origin  https://github.com/yyjh/learngit // 关联一个远程库
 	3)git push -u origin master第一次推送master分支的所有内容
 	  git push origin master推送最新修改
+9、推送免密方法：
+	.git/config 增加
+	[credential]   
+    helper = store
+	保存，第一次需要输入用户名密码，输入一次密码后第二次就会记住密码了不会再提示输入用户名及密码
