@@ -57,3 +57,7 @@ git reset HEAD readme.txt	//git reset命令既可以回退版本，也可以把�
 	创建dev分支并切换到dev相当于
 	git branch dev
 	git checkout dev
+	
+	
+	
+	master modify
