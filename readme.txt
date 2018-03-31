@@ -57,3 +57,9 @@ git reset HEAD readme.txt	//git reset命令既可以回退版本，也可以把�
 	创建dev分支并切换到dev相当于
 	git branch dev
 	git checkout dev
+12、git branch// 查看分支
+	git branch// 合并分支
+	git branch -d <name>// 删除分支
+	
+	
+	test confict
