@@ -61,6 +61,7 @@ git reset HEAD readme.txt	//git reset命令既可以回退版本，也可以把�
 12、git branch// 查看分支
 	git merge  branch// 合并分支
 	git branch -d <name>// 删除分支
+	git branch -D <name>// 强行删除分支(未被合并的分支)
 
 13、git merge --no-ff -m "merge with no-ff" dev// 禁用Fast forward，本次合并要创建一个新的commit，所以加上-m参数，
 	把commit描述写进去
@@ -68,3 +69,16 @@ git reset HEAD readme.txt	//git reset命令既可以回退版本，也可以把�
 14、git stash// 保留工作现场
 	git stash pop// 回复现场
 	git stash list  git stash apply stash@{0}
+	
+15、多人协作的工作模式通常是这样：
+
+	1).首先，可以试图用git push origin branch-name推送自己的修改；
+
+	2).如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并；
+
+	3).如果合并有冲突，则解决冲突，并在本地提交；
+
+	4).没有冲突或者解决掉冲突后，再用git push origin branch-name推送就能成功！
+
+	5).如果git pull提示“no tracking information”，则说明本地分支和远程分支的链接关系没有创建，用命令
+	git branch --set-upstream branch-name origin/branch-name。
