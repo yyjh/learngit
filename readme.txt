@@ -83,3 +83,18 @@ git reset HEAD readme.txt	//git reset命令既可以回退版本，也可以把�
 
 	5).如果git pull提示“no tracking information”，则说明本地分支和远程分支的链接关系没有创建，用命令
 	git branch --set-upstream branch-name origin/branch-name。
+
+16、tag
+	git tag <name>用于新建一个标签，默认为HEAD，也可以指定一个commit id
+	git tag -a <tagname> -m "blablabla..."可以指定标签信息
+	git tag -s <tagname> -m "blablabla..."可以用PGP签名标签
+	命令git tag可以查看所有标签
+	git log --pretty=oneline --abbrev-commit 查看日志(不带详细信息)
+	
+17、命令git push origin <tagname>可以推送一个本地标签；
+
+	命令git push origin --tags可以推送全部未推送过的本地标签；
+
+	命令git tag -d <tagname>可以删除一个本地标签；
+
+	命令git push origin :refs/tags/<tagname>可以删除一个远程标签
