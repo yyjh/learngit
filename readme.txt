@@ -2,6 +2,8 @@ git notebook
 
 1、创建目录 mkdir learngit
 
+git init // 初始化本地仓库
+
 git add readme.txt
 
 git commit -m "wrote a readme file"
