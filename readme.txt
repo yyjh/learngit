@@ -102,3 +102,26 @@ git reset HEAD readme.txt	//git reset命令既可以回退版本，也可以把�
 	命令git tag -d <tagname>可以删除一个本地标签；
 
 	命令git push origin :refs/tags/<tagname>可以删除一个远程标签
+	
+18、non-fast-forward
+	推送时出现这个报错
+	$ git push origin master
+	To https://github.com/yyjh/Notes.git
+	! [rejected]        master -> master (non-fast-forward)
+	error: failed to push some refs to 'https://github.com/yyjh/Notes.git'
+	hint: Updates were rejected because the tip of your current branch is behind
+	hint: its remote counterpart. Integrate the remote changes (e.g.
+	hint: 'git pull ...') before pushing again.
+	hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+	
+	出现(non-fast-forward)的根本原因是repository已经存在项目且不是你本人提交（我知道是大概率你提交的，但是git只认地址），你commit的项目和远程repo不一样。这时该怎么办呢？很简单，把远端项目拉回本地：
+
+	git pull
+	然而pull回来之后，你再push依旧会fail。 
+	原因是他们是两个不同的项目，要把两个不同的项目合并，不能简单的git pull。而是
+
+	git pull origin master --allow-unrelated-histories
+	这条命令允许了不同项目的合并。 
+	好了，pull成功了。 
+	接下来
+	git push origin master
