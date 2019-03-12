@@ -29,10 +29,38 @@ git reset HEAD readme.txt	//git reset命令既可以回退版本，也可以把�
 
 7、git rm -- readme.txt // 删除
 
-8、1)在github创建一个远程库
-	2)git remote add origin  https://github.com/yyjh/learngit // 关联一个远程库
-	3)git push -u origin master第一次推送master分支的所有内容
-	  git push origin master推送最新修改
+8、本地项目与远程git仓库关联
+	(1)、新建远程仓库或远程仓库为空
+		#git初始化本地仓库
+		git init
+		#设置remote地址
+		git remote add 地址
+		#将全部文件加入git版本管理 .的意思是将当前文件夹下的全部文件放到版本管理中
+		git add .
+		#提交文件 使用-m 编写注释
+		git commit -m "注释"
+		#推送到远程分支
+		git push
+	(2)、远程仓库已有文件
+		#git初始化
+		git init
+		#设置remote地址
+		git remote add  origin 地址
+		#获取远程仓库master分支上的内容
+		git pull origin master
+		#将当前分支设置为远程仓库的master分支
+		git branch --set-upstream-to=origin/master master
+		#将全部文件加入git版本管理 .的意思是将当前文件夹下的全部文件放到版本管理中
+		git add .
+		#提交文件 使用-m 编写注释
+		git commit -m "注释"
+		#推送到远程分支
+		git push
+
+	git remote add origin  https://github.com/yyjh/learngit // 关联一个远程库
+	git push -u origin master第一次推送master分支的所有内容
+	git push origin master推送最新修改
+	
 9、推送免密方法：
 	.git/config 增加
 	[credential]   
@@ -125,3 +153,19 @@ git reset HEAD readme.txt	//git reset命令既可以回退版本，也可以把�
 	好了，pull成功了。 
 	接下来
 	git push origin master
+
+19.代理上网导致的连接失败
+	(1)、ssh: connect to host github.com port 22: Connection timed out
+	fatal: Could not read from remote repository.
+	需要改用https协议。
+	git remote rm origin
+	git remote add orign https://github.com/******.git
+	
+	(2)、依然报错：fatal: unable to access 'https://github.com/******.git/': Failed to connect to github.com port 443: Timed out
+
+	设置全局代理
+	git config --global http.proxy 1172.17.6.133:808
+
+	查看是否成功
+	git config --get http.proxy
+	172.17.6.133:808
