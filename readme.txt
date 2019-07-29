@@ -154,7 +154,7 @@ git reset HEAD readme.txt	//git reset命令既可以回退版本，也可以把�
 	接下来
 	git push origin master
 
-19.代理上网导致的连接失败
+19.代理上网导致的连接失败,要设置全局代理
 	(1)、ssh: connect to host github.com port 22: Connection timed out
 	fatal: Could not read from remote repository.
 	需要改用https协议。
