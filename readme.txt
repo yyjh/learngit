@@ -12,7 +12,12 @@ ls -ah  // 显示隐藏文件夹
 
 2、
 git diff readme.txt
+git diff 44ef88c8ebac908d58
+git diff 
+
 git status
+
+cat 显示文件内容
 
 3、
 git reset --hard HEAD^ git reset --hard HEAD~100	// 回退上一版本s
@@ -195,3 +200,6 @@ git reset HEAD readme.txt	//git reset命令既可以回退版本，也可以把�
 	2)、少clone一些，–depth 1
 	git clone https://github.com/flutter/flutter.git --depth 1
 	–depth 1的含义是复制深度为1，就是每个文件只取最近一次提交，不是整个历史版本。
+22.vim命令
+	q! 【强制退出不保存】 q【退出不保存】 wq【退出并保存后面也可以加个！】
+	Ctrl+放大字体
