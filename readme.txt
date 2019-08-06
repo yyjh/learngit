@@ -203,3 +203,5 @@ git reset HEAD readme.txt	//git reset命令既可以回退版本，也可以把�
 22.vim命令
 	q! 【强制退出不保存】 q【退出不保存】 wq【退出并保存后面也可以加个！】
 	Ctrl+放大字体
+23.touch .ignore
+	https://github.com/github/gitignore
