@@ -248,6 +248,12 @@ Ctrl+放大字体
 Ctrl+c 中断 可对出退出换行状态
 
 **21. touch .ignore**
+
 https://github.com/github/gitignore
+
 删除git已经tracking的文件
+
+```
 git rm -r --cached ignoreFile（ignoreFile就是你想忽略的文件）
+```
+
