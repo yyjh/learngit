@@ -179,11 +179,15 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 出现(non-fast-forward)的根本原因是repository已经存在项目且不是你本人提交（我知道是大概率你提交的，但是git只认地址），你commit的项目和远程repo不一样。这时该怎么办呢？很简单，把远端项目拉回本地：
 
 git pull
+
 然而pull回来之后，你再push依旧会fail。 
+
 原因是他们是两个不同的项目，要把两个不同的项目合并，不能简单的git pull。而是
 
 git pull origin master --allow-unrelated-histories
+
 这条命令允许了不同项目的合并。 
+
 好了，pull成功了。 
 接下来
 git push origin master 
@@ -195,14 +199,16 @@ fatal: Could not read from remote repository.
 需要改用https协议。
 git remote rm origin
 git remote add orign https://github.com/******.git
+
 (2). 依然报错：fatal: unable to access 'https://github.com/******.git/': Failed to connect to github.com port 443: Timed out
 
 设置全局代理
+
 git config --global http.proxy 172.17.6.133:808
 
 查看是否成功
-git config --get http.proxy
-172.17.6.133:808
+
+git config --get http.proxy 172.17.6.133:808
 
 **18. git pull报错**
 
@@ -213,17 +219,27 @@ error: The following untracked working tree files would be overwritten by merge:
 Engine/Binaries/DotNET/GitDependencies.exe
 
 执行git clean -d -fx
+
 会删除掉没有add到仓库的文件，操作记得慎重，以免改动文件的丢失。本质上就是操作仓库中没有被追踪的本地文件
 
 git clean -f -n         # 1
+
 git clean -f            # 2
+
 git clean -fd           # 3
+
 git clean -fX           # 4
+
 git clean -fx           # 5
+
 (1). 选项-n将显示执行（2）时将会移除哪些文件。
+
 (2). 该命令会移除所有命令（1）中显示的文件。
+
 (3). 如果你还想移除文件件，请使用选项-d。
+
 (4). 如果你只想移除已被忽略的文件，请使用选项-X。
+
 (5). 如果你想移除已被忽略和未被忽略的文件，请使用选项-x。	
 
 **19. RPC failed; curl 18 transfer closed with outstanding read data remaining**
