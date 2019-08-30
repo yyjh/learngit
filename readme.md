@@ -47,9 +47,10 @@ git reset HEAD readme.md	//git reset命令既可以回退版本，也可以把�
 
 **6. git跟踪并管理的是修改而非文件，修改必须 先add到暂存区（stage）后才能被commit**
 
+```
 git add readme.md
-
 git commit -m "wrote a readme file"
+```
 
 **7. 下拉仓库内容到本地**
 
@@ -219,11 +220,11 @@ git clean -f            # 2
 git clean -fd           # 3
 git clean -fX           # 4
 git clean -fx           # 5
-(1): 选项-n将显示执行（2）时将会移除哪些文件。
-(2): 该命令会移除所有命令（1）中显示的文件。
-(3): 如果你还想移除文件件，请使用选项-d。
-(4): 如果你只想移除已被忽略的文件，请使用选项-X。
-(5): 如果你想移除已被忽略和未被忽略的文件，请使用选项-x。	
+(1). 选项-n将显示执行（2）时将会移除哪些文件。
+(2). 该命令会移除所有命令（1）中显示的文件。
+(3). 如果你还想移除文件件，请使用选项-d。
+(4). 如果你只想移除已被忽略的文件，请使用选项-X。
+(5). 如果你想移除已被忽略和未被忽略的文件，请使用选项-x。	
 
 **19. RPC failed; curl 18 transfer closed with outstanding read data remaining**
 
