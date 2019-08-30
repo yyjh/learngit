@@ -39,7 +39,7 @@ git reset HEAD readme.txt	//git reset命令既可以回退版本，也可以把�
 		#git初始化本地仓库
 		git init
 		#设置remote地址
-		git remote add 地址
+		git remote add origin 地址
 		#将全部文件加入git版本管理 .的意思是将当前文件夹下的全部文件放到版本管理中
 		git add .
 		#提交文件 使用-m 编写注释
@@ -169,7 +169,7 @@ git reset HEAD readme.txt	//git reset命令既可以回退版本，也可以把�
 	(2)、依然报错：fatal: unable to access 'https://github.com/******.git/': Failed to connect to github.com port 443: Timed out
 
 	设置全局代理
-	git config --global http.proxy 1172.17.6.133:808
+	git config --global http.proxy 172.17.6.133:808
 
 	查看是否成功
 	git config --get http.proxy
@@ -203,5 +203,8 @@ git reset HEAD readme.txt	//git reset命令既可以回退版本，也可以把�
 22.vim命令
 	q! 【强制退出不保存】 q【退出不保存】 wq【退出并保存后面也可以加个！】
 	Ctrl+放大字体
+	Ctrl+c 中断 可对出退出换行状态
 23.touch .ignore
 	https://github.com/github/gitignore
+	删除git已经tracking的文件
+	git rm -r --cached ignoreFile（ignoreFile就是你想忽略的文件）
