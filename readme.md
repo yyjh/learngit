@@ -114,11 +114,16 @@ Please make sure you have the correct access rights
 and the repository exists.
 
 需添加公钥 :
-		   1) 可以用 ssh -T git@github.com去测试一下
-		   2) 执行 ssh-keygen -t rsa -b 4096 -C "kunn_zhang@163.com" 产生key
-		   3) 开启ssh-agent	执行 eval $(ssh-agent -s)
-		   4) 把key加到ssh-agent 执行ssh-add ~/.ssh/id_rsa
-		   5) 复制到剪切板 clip < ~/.ssh/id_rsa.pub,添加到github setings里
+
+(1). 可以用 ssh -T git@github.com去测试一下
+
+(2). 执行 ssh-keygen -t rsa -b 4096 -C "kunn_zhang@163.com" 产生key
+
+(3). 开启ssh-agent执行 eval $(ssh-agent -s)
+
+(4). 把key加到ssh-agent 执行ssh-add ~/.ssh/id_rsa
+
+(5). 复制到剪切板 clip < ~/.ssh/id_rsa.pub,添加到github setings里
 
 **12. 分支**
 
