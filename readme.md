@@ -1,6 +1,6 @@
 ### git notebook
 
-##### 1. 文件件操作
+**1. 文件件操作**
 
 ```
 mkdir learngit  //创建目录 
@@ -8,7 +8,7 @@ git init   // 初始化本地仓库
 ls -ah  // 显示隐藏文件夹
 ```
 
-##### 2. git跟踪并管理的是修改而非文件，修改必须先add到暂存区(stage)后才能被commit。普通工作流程：
+**2. git跟踪并管理的是修改而非文件，修改必须先add到暂存区(stage)后才能被commit。普通工作流程：**
 
 ```
 git add readme.md
@@ -18,7 +18,7 @@ git push // push到仓库
 git push -u origin master第一次推送master分支的所有内容
 ```
 
-##### 3. 对比
+**3. 对比**
 
 ```
 git diff
@@ -29,7 +29,7 @@ git status  // 文件状态
 cat  readme.md //显示文件内容
 ```
 
-##### 4. 历史记录
+**4. 历史记录**
 
 ```
 git log
@@ -37,7 +37,7 @@ git log --pretty=oneline --abbrev-commit 查看日志(不带详细信息)
 git reflog // 查看命令历史，以便确定要回到未来的哪个版本
 ```
 
-##### 5. 回退
+**5. 回退**
 
 ```
 git reset --hard HEAD^ 
@@ -45,13 +45,13 @@ git reset --hard HEAD~100	// 回退上一版本s
 git reset HEAD readme.md	//git reset命令既可以回退版本，也可以把暂存区的修改回退到工作区
 ```
 
-##### 6. git跟踪并管理的是修改而非文件，修改必须 先add到暂存区（stage）后才能被commit
+**6. git跟踪并管理的是修改而非文件，修改必须 先add到暂存区（stage）后才能被commit**
 
 git add readme.md
 
 git commit -m "wrote a readme file"
 
-##### 7. 下拉仓库内容到本地
+**7. 下拉仓库内容到本地**
 
 ```
 git pull  // 下拉
@@ -59,13 +59,13 @@ git pull origin master  // 第一次获取远程仓库master分支上的内容
 git checkout -- readme.md	// 让这个文件回到最近一次git commit或git add时的状态
 ```
 
-##### 8. 删除
+**8. 删除**
 
 ```
 git rm -- readme.md
 ```
 
-##### 9. 本地项目与远程git仓库关联流程
+**9. 本地项目与远程git仓库关联流程**
 
 (1). 新建远程仓库或远程仓库为空
 
@@ -89,7 +89,7 @@ git commit -m "注释"  // 提交文件 使用-m 编写注释
 git push  // 推送到远程分支
 ```
 
-##### 10. 推送免密方法：
+**10. 推送免密方法：**
 
 ```
 .git/config 增加
@@ -99,7 +99,8 @@ helper = store
 
 保存，第一次需要输入用户名密码，输入一次密码后第二次就会记住密码了不会再提示输入用户名及密码
 
-##### 11. 从远程库clone
+**11. 从远程库clone**
+
 GitHub默认使用ssh，git clone git@github.com:yyjh/learngit.git
 实际上，Git支持多种协议还可以用https等其他协议，如https://github.com/yyjh/learngit.git这样的地址。
 
@@ -118,7 +119,7 @@ and the repository exists.
 		   4) 把key加到ssh-agent 执行ssh-add ~/.ssh/id_rsa
 		   5) 复制到剪切板 clip < ~/.ssh/id_rsa.pub,添加到github setings里
 
-##### 12. 分支
+**12. 分支**
 
 ```
 git checkout -b dev
@@ -134,12 +135,13 @@ git branch -d <name>// 删除分支
 git branch -D <name>// 强行删除分支(未被合并的分支)
 ```
 
-##### 13. 合并
+**13. 合并**
+
 ```
 git merge --no-ff -m "merge with no-ff" dev  // 禁用Fast forward，本次合并要创建一个新的		                                                 commit，所以加上-m参数，把commit描述写进去
 ```
 
-##### 14. stash
+**14. stash**
 
 ```
 git stash// 保留工作现场
@@ -147,7 +149,7 @@ git stash pop// 回复现场
 git stash list  git stash apply stash@{0}
 ```
 
-##### 15. tag(标签)
+**15. tag(标签)**
 
 ```
 git tag  // 查看所有标签
@@ -161,7 +163,7 @@ git tag -d <tagname>  // 删除一个本地标签
 git push origin :refs/tags/<tagname>  // 删除一个远程标签
 ```
 
-##### 16. non-fast-forward
+**16. non-fast-forward**
 
 推送时出现这个报错:
 $ git push origin master
@@ -185,7 +187,8 @@ git pull origin master --allow-unrelated-histories
 接下来
 git push origin master 
 
-##### 17. 代理上网导致的连接失败,要设置全局代理
+**17. 代理上网导致的连接失败,要设置全局代理**
+
 (1). ssh: connect to host github.com port 22: Connection timed out
 fatal: Could not read from remote repository.
 需要改用https协议。
@@ -200,7 +203,8 @@ git config --global http.proxy 172.17.6.133:808
 git config --get http.proxy
 172.17.6.133:808
 
-##### 18. git pull报错
+**18. git pull报错**
+
 error: The following untracked working tree files would be overwritten by merge:
 .editorconfig
 .gitattributes
@@ -221,7 +225,8 @@ git clean -fx           # 5
 (4): 如果你只想移除已被忽略的文件，请使用选项-X。
 (5): 如果你想移除已被忽略和未被忽略的文件，请使用选项-x。	
 
-##### 19. RPC failed; curl 18 transfer closed with outstanding read data remaining
+**19. RPC failed; curl 18 transfer closed with outstanding read data remaining**
+
 (1). 加大缓存区
 
 ```
@@ -236,12 +241,13 @@ git clone https://github.com/flutter/flutter.git --depth 1
 
 –depth 1的含义是复制深度为1，就是每个文件只取最近一次提交，不是整个历史版本。
 
-##### 20. vim命令
+**20. vim命令**
+
 q! 【强制退出不保存】 q【退出不保存】 wq【退出并保存后面也可以加个！】
 Ctrl+放大字体
 Ctrl+c 中断 可对出退出换行状态
 
-##### 21. touch .ignore
+**21. touch .ignore**
 
 https://github.com/github/gitignore
 删除git已经tracking的文件
