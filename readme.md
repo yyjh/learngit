@@ -1,6 +1,6 @@
 ### git notebook
 
-**1. 文件件操作**
+**1. 文件操作**
 
 ```
 mkdir learngit  //创建目录 
@@ -64,9 +64,15 @@ git checkout -- readme.md	// 让这个文件回到最近一次git commit或git a
 
 ```
 git rm -- readme.md
+git rm -r filefolder
+
 ```
 
-**9. 本地项目与远程git仓库关联流程**
+**9.重命名**
+git mv a.txt b.txt
+或 mv a.txt b.txt  git add a.txt
+
+**10. 本地项目与远程git仓库关联流程**
 
 (1). 新建远程仓库或远程仓库为空
 
@@ -90,7 +96,7 @@ git commit -m "注释"  // 提交文件 使用-m 编写注释
 git push  // 推送到远程分支
 ```
 
-**10. 推送免密方法：**
+**11. 推送免密方法：**
 
 ```
 .git/config 增加
@@ -100,7 +106,7 @@ helper = store
 
 保存，第一次需要输入用户名密码，输入一次密码后第二次就会记住密码了不会再提示输入用户名及密码
 
-**11. 从远程库clone**
+**12. 从远程库clone**
 
 GitHub默认使用ssh，git clone git@github.com:yyjh/learngit.git
 实际上，Git支持多种协议还可以用https等其他协议，如https://github.com/yyjh/learngit.git这样的地址。
@@ -125,7 +131,7 @@ and the repository exists.
 
 (5). 复制到剪切板 clip < ~/.ssh/id_rsa.pub,添加到github setings里
 
-**12. 分支**
+**13. 分支**
 
 ```
 git checkout -b dev
@@ -141,13 +147,13 @@ git branch -d <name>// 删除分支
 git branch -D <name>// 强行删除分支(未被合并的分支)
 ```
 
-**13. 合并**
+**14. 合并**
 
 ```
 git merge --no-ff -m "merge with no-ff" dev  // 禁用Fast forward，本次合并要创建一个新的commit，所以加上-m参数，把commit描述写进去
 ```
 
-**14. stash**
+**15. stash**
 
 ```
 git stash// 保留工作现场
@@ -155,7 +161,7 @@ git stash pop// 回复现场
 git stash list  git stash apply stash@{0}
 ```
 
-**15. tag(标签)**
+**16. tag(标签)**
 
 ```
 git tag  // 查看所有标签
@@ -169,7 +175,7 @@ git tag -d <tagname>  // 删除一个本地标签
 git push origin :refs/tags/<tagname>  // 删除一个远程标签
 ```
 
-**16. non-fast-forward**
+**17. non-fast-forward**
 
 推送时出现这个报错:
 $ git push origin master
@@ -197,7 +203,7 @@ git pull origin master --allow-unrelated-histories
 接下来
 git push origin master 
 
-**17. 代理上网导致的连接失败,要设置全局代理**
+**18. 代理上网导致的连接失败,要设置全局代理**
 
 (1). ssh: connect to host github.com port 22: Connection timed out
 fatal: Could not read from remote repository.
@@ -215,7 +221,7 @@ git config --global http.proxy 172.17.6.133:808
 
 git config --get http.proxy 172.17.6.133:808
 
-**18. git pull报错**
+**19. git pull报错**
 
 error: The following untracked working tree files would be overwritten by merge:
 .editorconfig
@@ -247,7 +253,7 @@ git clean -fx           # 5
 
 (5). 如果你想移除已被忽略和未被忽略的文件，请使用选项-x。	
 
-**19. RPC failed; curl 18 transfer closed with outstanding read data remaining**
+**20. RPC failed; curl 18 transfer closed with outstanding read data remaining**
 
 (1). 加大缓存区
 
@@ -263,13 +269,13 @@ git clone https://github.com/flutter/flutter.git --depth 1
 
 –depth 1的含义是复制深度为1，就是每个文件只取最近一次提交，不是整个历史版本。
 
-**20. vim命令**
+**21. vim命令**
 
 q! 【强制退出不保存】 q【退出不保存】 wq【退出并保存后面也可以加个！】
 Ctrl+放大字体
 Ctrl+c 中断 可对出退出换行状态
 
-**21. touch .ignore**
+**22. touch .ignore**
 
 https://github.com/github/gitignore
 
