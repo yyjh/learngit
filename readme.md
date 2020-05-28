@@ -62,7 +62,7 @@ git mv a.txt b.txt
 ```
 
 #### 本地项目与远程git仓库关联流程
-新建远程仓库或远程仓库为空
+* 新建远程仓库或远程仓库为空
 ```
 1.git init  // git初始化本地仓库
 2.git remote add origin https://github.com/yyjh/learngit  // 关联一个远程库
@@ -70,7 +70,7 @@ git mv a.txt b.txt
 4.git commit -m "注释"  // 提交文件 使用-m 编写注释
 5.git push  // 推送到远程分支
 ```
-远程仓库已有文件
+* 远程仓库已有文件
 ```
 1.git init  // git初始化
 2.git remote add origin https://github.com/yyjh/learngit  // 关联一个远程库
@@ -97,8 +97,7 @@ git config --global user.password "password"
 git config --global user.email "aa@qq.com"
 ```
 
-##### 从远程库clone
-
+#### 从远程库clone
 GitHub默认使用ssh，git clone git@github.com:yyjh/learngit.git
 实际上，Git支持多种协议还可以用https等其他协议，如https://github.com/yyjh/learngit.git这样的地址。
 
@@ -130,42 +129,38 @@ git checkout -b dev
 ```
 git branch dev
 git checkout dev
-```
-
-```
 git pull <remote> <branch>: Download changes and directly merge/integrate into HEAD
-```
-
-git branch// 查看分支
-git merge  branch// 合并分支
-git branch -d <name>// 删除分支
-git branch -D <name>// 强行删除分支(未被合并的分支)
+git branch 查看分支
+git merge  branch 合并分支
+git branch -d <name> 删除分支
+git branch -D <name> 强行删除分支(未被合并的分支)
 ```
 	
 #### 合并
+
 ```
-git merge --no-ff -m "merge with no-ff" dev  // 禁用Fast forward，本次合并要创建一个新的commit，所以加上-m参数，把commit描述写进去
+git merge --no-ff -m "merge with no-ff" dev 禁用Fast forward，本次合并要创建一个新的commit，所以加上-m参数，把commit描述写进去
 ```
 
 #### stash
 ```
-git stash// 保留工作现场
-git stash pop// 回复现场
+git stash 保留工作现场
+git stash pop 回复现场
 git stash list  git stash apply stash@{0}
 ```
 
 #### tag(标签)
 
 ```
-git tag  // 查看所有标签
-git tag <name>  // 用于新建一个标签，默认为HEAD，也可以指定一个commit id
-git tag -a <tagname> -m "blablabla..."  // 可以指定标签信息
-git tag -s <tagname> -m "blablabla..."  // 可以用PGP签名标签
+git tag 查看所有标签
+git tag <name> 用于新建一个标签，默认为HEAD，也可以指定一个commit id
+git tag -a <tagname> -m "blablabla..." 可以指定标签信息
+git tag -s <tagname> -m "blablabla..." 可以用PGP签名标签
 
-git push origin <tagname> // 推送一个本地标签
-git push origin --tags  // 推送全部未推送过的本地标签
-git tag -d <tagname>  // 删除一个本地标签
-git push origin :refs/tags/<tagname>  // 删除一个远程标签
+git push origin <tagname> 推送一个本地标签
+git push origin --tags 推送全部未推送过的本地标签
+git tag -d <tagname> 删除一个本地标签
+git push origin :refs/tags/<tagname> 删除一个远程标签
 ```
 #### non-fast-forward
 
