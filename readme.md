@@ -137,7 +137,6 @@ git branch -D <name> 强行删除分支(未被合并的分支)
 ```
 	
 #### 合并
-
 ```
 git merge --no-ff -m "merge with no-ff" dev 禁用Fast forward，本次合并要创建一个新的commit，所以加上-m参数，把commit描述写进去
 ```
