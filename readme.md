@@ -1,5 +1,9 @@
 ## git notebook
 
+#### 文档
+```
+https://docs.github.com/cn
+
 #### 文件操作
 ```
 mkdir learngit  //创建目录
